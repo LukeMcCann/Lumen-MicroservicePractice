@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
  * 
  * Controller class for handling Campaign database functions.
  */
-class PersonController extends Controller {
+class CampaignController extends Controller {
 
     public function createCampaign(Request $request) {
         $campaign = Campaign::create($request0>all());
@@ -19,7 +19,7 @@ class PersonController extends Controller {
     }
 
     public function deleteCampaign($id) {
-        $campaign = Campaign::find($id);
+        $campaign = Campaign::findOrFail($id);
         $campaign->delete();
         return response()->json('Successfully Removed: ' . $id);
     }
