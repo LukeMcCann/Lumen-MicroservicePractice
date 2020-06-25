@@ -19,6 +19,5 @@ $router->get('/', function () use ($router) {
 
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('persons',  ['uses' => 'PersonController@showAllPersons']);
-
     $router->get('campaigns', ['uses' => 'CampaignController@showAllCampaigns']);
   });

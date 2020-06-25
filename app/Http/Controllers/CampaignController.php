@@ -13,6 +13,14 @@ use Illuminate\Http\Request;
  */
 class CampaignController extends Controller {
 
+    public function showAllCampaigns() {
+        return response()->json(Campaign::all());
+    }
+
+    public function showOneCampaign($id) {
+        return response()->json(Campagin::find($id));
+    }
+
     public function createCampaign(Request $request) {
         $campaign = Campaign::create($request0>all());
         return response()->json($person);
